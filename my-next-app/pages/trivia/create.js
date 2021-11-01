@@ -5,21 +5,21 @@ import Head from 'next/head'
 const CreateTrivia = () => {
   const [trivia, setTrivia] = useState([])
   const [error, setError] = useState(null)
-  const [triviaFact, setTriviaFact] = useState('')
+  const [title, setTitle] = useState('')
 
   const handleTriviaChange = (event) => {
-    setTriviaFact(event.target.value)
+    setTitle(event.target.value)
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     await createTrivia()
-    getTrivias()
+    console.log('submitted!')
   }
 
   const createTrivia = async () => {
     try {
-      const response = await axios.post('api/trivia', { triviaFact })
+      const response = await axios.post('/api/trivia', { title })
       if (response?.data?.success) {
         setTrivia(response.data.data)
       }
@@ -58,12 +58,12 @@ const CreateTrivia = () => {
       </Head>
       <h1>A New Fact!?</h1>
       <form style={{ marginBottom: '2rem' }} onSubmit={handleSubmit}>
-        <label htmlFor="newTrivia">Create a new Cool Elephant Fact!</label>
+        <label htmlFor="title">Create a new Cool Elephant Fact!</label>
         <input
-          id="newTrivia"
+          id="title"
           type="text"
-          name="newTrivia"
-          value={triviaFact}
+          name="title"
+          value={title}
           onChange={handleTriviaChange}
         />
         <button type="submit">Send!</button>

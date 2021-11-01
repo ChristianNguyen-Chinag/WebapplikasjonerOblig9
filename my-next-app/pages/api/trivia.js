@@ -22,7 +22,7 @@ export default function handler(req, res) {
   if (req.method === 'POST') {
     const data = req.body
 
-    if (!data?.question) {
+    if (!data?.title) {
       // status 400 (Bad Request)
       res
         .status(400)
