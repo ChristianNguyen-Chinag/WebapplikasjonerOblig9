@@ -11,7 +11,7 @@ const Navigation = () => {
         </li>
         <li>
           <Link href="/trivia">
-            <a>Trivia</a>
+            <a className="first">Trivia</a>
           </Link>
         </li>
       </ul>
