@@ -24,10 +24,13 @@ export default function handler(req, res) {
 
     trivias.push(data)
 
+    // status 201 (created)
     res.status(201).json({ success: true, data: trivias })
   } else if (req.method === 'PUT') {
+    // status 405 (not allowed)
     res.status(405).end()
   } else {
+    // status 200 (OK)
     res.status(200).json({ success: true, data: trivias })
   }
 }
