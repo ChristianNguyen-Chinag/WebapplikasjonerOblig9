@@ -1,8 +1,9 @@
-export default function Trivia() {
+import Trivia from '../../components/Trivia'
+
+export default function TriviaPage() {
   return (
     <>
-      <div>Trivia!</div>
-      <div>Information!</div>
+      <Trivia></Trivia>
     </>
   )
 }
