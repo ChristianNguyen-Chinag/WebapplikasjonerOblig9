@@ -1,0 +1,5 @@
+{
+    "presets": ["next/babel"],
+    "plugins": []
+    // this + .eslintrc needed because the ESLINT addon couldnt find next/babel modul in index.js
+  }
