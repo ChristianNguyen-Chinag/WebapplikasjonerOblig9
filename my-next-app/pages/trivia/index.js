@@ -1,3 +1,8 @@
-export default function Home() {
-  return <div>Trivia!</div>
+export default function Trivia() {
+  return (
+    <>
+      <div>Trivia!</div>
+      <div>Information!</div>
+    </>
+  )
 }
