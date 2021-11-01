@@ -14,6 +14,11 @@ const Navigation = () => {
             <a className="first">Trivia</a>
           </Link>
         </li>
+        <li>
+          <Link href="/trivia/create">
+            <a>Create</a>
+          </Link>
+        </li>
       </ul>
     </nav>
   )
