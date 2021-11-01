@@ -22,10 +22,16 @@ export default function handler(req, res) {
   if (req.method === 'POST') {
     const data = req.body
 
-    trivias.push(data)
-
-    // status 201 (created)
-    res.status(201).json({ success: true, data: trivias })
+    if (!data?.question) {
+      // status 400 (Bad Request)
+      res
+        .status(400)
+        .json({ success: false, error: 'Fill in all necessary data' })
+    } else {
+      trivias.push(data)
+      // status 201 (Created)
+      res.status(201).json({ success: true, data: trivias })
+    }
   } else if (req.method === 'PUT') {
     // status 405 (not allowed)
     res.status(405).end()
