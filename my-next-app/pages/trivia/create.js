@@ -10,6 +10,11 @@ const CreateTrivia = () => {
     setTriviaFact(event.target.value)
   }
 
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    await createTrivia()
+  }
+
   const createTrivia = async () => {
     try {
       const response = await axios.post('api/trivia', { triviaFact })
@@ -19,11 +24,6 @@ const CreateTrivia = () => {
     } catch (err) {
       setError(err?.response?.data?.error)
     }
-  }
-
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    await createTrivia()
   }
 
   if (error) {

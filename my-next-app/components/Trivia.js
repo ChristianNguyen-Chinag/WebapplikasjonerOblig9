@@ -9,6 +9,7 @@ const Trivia = () => {
       const response = await axios.get('/api/trivia')
 
       if (response?.data?.success) {
+        //first data is axios. second data is what we called it in our api
         setTrivia(response.data.data)
       }
     } catch (error) {
